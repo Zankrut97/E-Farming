@@ -1,0 +1,99 @@
+<style>
+.card-footer {
+	padding: 0px 0px 20px 20px;
+}
+.description_block {
+	height: 150px;
+}
+
+.description_text {
+	font-size:13px;
+}
+
+</style>
+<data ui-view>
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl">
+  <link rel="stylesheet" type="text/css" id="theme" href="..\resources\css1\theme-default.css"/>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        
+</header>
+
+   <section id="main" data-layout="layout-1">
+   		<aside id="sidebar" data-ng-include="'views/adminmenu.html'"></aside>
+   		<section id="content">
+   			<div class="container">
+         		<div class="row">
+                        <div class="col-md-9">
+                        		<div class="card">
+        <div class="card-header">
+            <h2>Biding History <small>Shows Previous Biding Details </small></h2>
+        </div>
+
+        <div class="card-body table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>NO.</th>
+                        <th>Product Name</th>
+                        <th>Base Price</th>
+                        <th>Date Of Biding</th>
+                        <th>Highest Biding</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>wheat</td>
+                        <td>10000</td>
+                        <td>12/01/2019</td>
+                        <td>12000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Rice</td>
+                        <td>1000</td>
+                        <td>20/03/2018</td>
+                        <td>1200</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Barely</td>
+                        <td>20000</td>
+                        <td>18/04/2018</td>
+                        <td>22000</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Cotton</td>
+                        <td>12000</td>
+                        <td>14/08/2018</td>
+                        <td>15000</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Sugarcane</td>
+                        <td>30000</td>
+                        <td>08/04/2018</td>
+                        <td>32000</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+                
+        
+        </div>
+               
+      
+    </div>
+  	</div>
+   			
+     	</section>
+	</section>
+</data>
+
+

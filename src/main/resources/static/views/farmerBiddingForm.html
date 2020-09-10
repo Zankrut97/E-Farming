@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>E-Farming</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+           
+            .content
+            {
+                height: max-content;
+                padding: 15px;
+            }
+           
+            body
+            {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                background: #E0EAFC;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to left, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to left, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                
+                background-image: url('resources/img/vege.jpg');
+                background-repeat: no-repeat;
+ 				background-size: 100%;
+ 			
+            }
+            
+        </style>
+    </head>
+
+    <body>    
+            <header id="header" data-ng-include="'views/FarmerHeader.html'">
+            </header>
+        
+        <div class="row-lg-4 content">
+			        <section id="content" style="margin-top: 170px;">
+			<form id = "biddingForm" data-ng-submit = "createBid($event)">
+					<div class="card col-lg-11">
+				<div class="row">
+			            <div class="card-header ch-alt col-lg-12">
+			                <h1 align="center">CREATE A BID</h1>
+			            </div>
+			         </div>
+				
+			            <div class="card-body card-padding">
+			            
+			             <div class="row">   
+			                <div class="form-group fg-line c-black f-500 select col-sm-6">
+			                                <select class="form-control" data-ng-model = "bidInfo.cropName" required>
+			                                    <option value=" ">Select Crop</option>
+			                                    <option ng-repeat="product in productList" value="{{product.productName}}">{{product.productName}}</option>
+			                                </select>
+			                          
+			                </div>
+			
+			                <div class="form-group fg-float m-b-30 col-lg-6">
+			                    <div class="fg-line">
+			                        <input type="text" class="form-control input-sm" data-ng-model = "bidInfo.cropType" required>
+			                        <label class="fg-label">Crop Type</label>
+			                    </div>
+			                </div>
+			            </div>
+						<div class="row">
+			                <div class="form-group fg-float m-b-30 col-lg-6">
+			                    <div class="fg-line">
+			                        <input type="number" class="form-control input-sm" data-ng-model = "bidInfo.basePrice" required>
+			                        <label class="fg-label">Base Price For 100KG</label>
+			                    </div>
+			                </div>
+			               
+			                <div class="form-group fg-float m-b-30 col-lg-6">
+			                    <div class="fg-line">
+			                        <input type="text" class="form-control input-sm" data-ng-model = "bidInfo.weight" required>
+			                        <label class="fg-label">Enter Total Weight </label>
+			                    </div>
+			                </div>
+			                </div>
+			                <div class="row">
+			                <div class="form-group fg-float m-b-30 col-lg-6">
+			                    <div class="fg-line">
+			                        <input type="datetime-local" class="form-control input-sm" data-ng-model = "bidInfo.startDate" required>
+			                        <label class="fg-label">Start Date</label>
+			                    </div>      
+			                </div>
+			               
+			                <div class="form-group fg-float m-b-30 col-lg-6">
+			             		     <div class="fg-line">
+			                        <input type="datetime-local" class="form-control input-sm" data-ng-model = "bidInfo.endDate" required>
+			                        <label class="fg-label">End Date</label>
+			                    </div>
+			                </div>
+			               
+			               
+			                </div>
+			                <br>
+			                <div class="row">
+			                <div class="form-group fg-float m-b-30 col-lg-4">
+			                    <div class="fg-line">
+			                        <input type="text" class="form-control input-sm" data-ng-model = "bidInfo.selectCountry" required>
+			                        <label class="fg-label">Enter Your Country</label>
+			                    </div>
+			                </div>
+							 <div class="form-group fg-float m-b-30 col-lg-4">
+			                    <div class="fg-line">
+			                        <input type="text" class="form-control input-sm" data-ng-model = "bidInfo.selectState" required>
+			                        <label class="fg-label">Enter Your State</label>
+			                    </div>
+			                </div>
+			                <div class="form-group fg-float m-b-30 col-lg-4">
+			                    <div class="fg-line">
+			                        <input type="text" class="form-control input-sm" data-ng-model = "bidInfo.selectDistrict" required>
+			                        <label class="fg-label">Enter Your District</label>
+			                    </div>
+			                </div>
+								
+							</div>
+			                <br>
+			                
+			                <div class="row">
+			                <div class="form-group fg-float col-lg-12">
+			                    <div class="fg-line">
+			                        <textarea class="form-control input-sm" data-ng-model = "bidInfo.description" auto-size="" data-autosize-on="true" style="overflow: hidden; overflow-wrap: break-word; height: 36px;"></textarea>
+			                        <label class="fg-label">Enter Description</label>
+			                    </div>
+			                </div>
+							</div>
+				
+			               <button type="submit" class="btn btn-info waves-effect">Submit</button>
+			                <button type="reset" class="btn btn-link waves-effect">Cancel</button>
+			            </div>
+			      
+			        </div>	
+			      </form>
+			</section>	
+       
+           
+        </div>
+      
+    </body>
+</html>

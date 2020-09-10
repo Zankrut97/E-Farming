@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>E-Farming</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <style>
+           
+            .content
+            {
+                height: max-content;
+                padding: 15px;
+            }
+           
+            body
+            {
+                font-family: 'Thasadith', sans-serif;
+                background: #E0EAFC;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to left, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to left, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                
+                background-image: url('resources/img/vege.jpg');
+                background-repeat: no-repeat;
+ 				background-size: 100%;
+ 			
+            }
+            
+            @keyframes moveInBottom{
+
+                0%{
+                    opacity:0;
+                    transform: translateY(1000px);
+                }
+
+
+                100%{
+                    opacity:1;
+                    transform: translateY(0px);
+                }
+            }     
+              
+            
+        </style>
+          
+    </head>
+
+    <body>    
+            <header id="header" data-ng-include="'views/FarmerHeader.html'">
+            </header>
+
+       <div style="animation-name:moveInBottom;animation-duration: 2s;background-color: transparent;">  
+       <div class="row" style="width: 36%; margin-top: 170px; margin-left:130px;">
+           <h1 style="font-size:30px;color:green;background-color:white;font-family: 'Anton', sans-serif;text-transform: uppercase;">major factors to consider in crop selection
+           </h1>
+
+        </div>
+
+        <div  class=" col-lg-10 col-lg-offset-1" style="background-color:white;height:92px;margin-left:130px;opacity: 0.8; border: 2px solid; border-radius: 2rem;">
+            <p style="text-transform: uppercase;font-size: 16px">
+            <b>Prevailing farm conditions:</b> An environmental scanning should first be conducted. This involves a thoroughocular inspection and other methods to obtain information on the biotic factor that can affect plant growth and yield, soil and climatic conditions prevailing in the area, and accessibility. Here the guiding rule is: know your farm first then select the right crop.
+           </p>
+        </div>
+
+        <div  class=" col-lg-10 col-lg-offset-1" style="background-color:white;height:115px;margin-left:130px;opacity: 0.8; border: 2px solid; border-radius: 2rem;margin-top:5px">
+            <p style="text-transform: uppercase;font-size: 16px">
+           <b>Crop or varietal adaptability:</b> The crops and the varieties to be grown should be selected based on their adaptability to the prevailing conditions in the farm. A useful guide is to identify the crops growing in the farm and in the neighborhood. An interview of the neighboring farmers will also provide valuable information as to the probability of success, or failure, of growing certain preferred crops. Furthermore, it is an advantage to have access to lists of different crops under the various plant classification based on natural adaptation or habitat.
+           </p>
+        </div>
+
+         <div  class=" col-lg-10 col-lg-offset-1" style="background-color:white;height:158px;margin-left:130px;opacity: 0.8; border: 2px solid; border-radius: 2rem;margin-top:5px;">
+            <p style="text-transform: uppercase;font-size: 16px;">
+           <b>Marketability and profitability:</b> For those who want to engage in cash crop farming or, at the least, ensure financial sustainability, crop selection must consider marketability and profitability. In general, this means that the crop to be selected must be high yielding. The product, be it the fruit, seed, modified root or stem, flower or foliage or any part, must have an accessible, stable and robust market. With efficient labor and use of inputs, the harvest will realize profit to finance the suceeding farm activities or generate substantial return on investment. However, market and price are dictated by many factors such as the number of competitors, supply and demand, development of new products, promotional campaign, and agribusiness cycle.</p>
+        </div>
+
+        <div  class=" col-lg-10 col-lg-offset-1" style="background-color:white;height:69px;margin-left:130px;opacity: 0.8; border: 2px solid; border-radius: 2rem;margin-top:5px">
+            <p style="text-transform: uppercase;font-size: 16px">
+          <b>Resistance to pests and diseases:</b>Regardless of the purpose of farming, it is important to be able to select a crop and variety with wide resistance to important pests and diseases. The use of susceptible varieties may result to high cost of production or, worst, total crop failure.</p>
+        </div>
+
+         <div  class=" col-lg-10 col-lg-offset-1" style="background-color:white;height:92px;margin-left:130px;opacity: 0.8; border: 2px solid; border-radius: 2rem;margin-top:5px">
+            <p style="text-transform: uppercase;font-size: 16px">
+          <b>Availability and cost of planting materials</b> These are important considerations especially among those who have limited capital. Take for example African oil palm. Even assuming that the projected return on investment is high and net profit can be realized in a short period of time, it would be difficult for small farmers to buy certified seedlings where the cost is about 10 times that of coconut. Plus the cost of hauling may be staggering.</p>
+        </div>
+        
+        
+</div>
+
+	<footer id="footer" data-ng-include="'views/krishisevak.html'">
+            </footer>		 
+    </body>
+</html>

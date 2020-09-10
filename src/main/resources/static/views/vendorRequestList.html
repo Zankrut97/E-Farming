@@ -1,0 +1,96 @@
+<head>
+		
+         
+<style>
+			.card-footer {
+				padding: 0px 0px 20px 20px;
+			}
+
+			.description_block {
+				height: 150px;
+			}
+
+			.description_text {
+				font-size:13px;
+			}
+    
+
+</style>
+
+</head>
+<data ui-view>
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl">
+  <link rel="stylesheet" type="text/css" id="theme" href="..\resources\css1\theme-default.css"/>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        
+</header>
+
+   <section id="main" data-layout="layout-1">
+   		<aside id="sidebar" data-ng-include="'views/adminmenu.html'"></aside>
+   		<section id="content" style="width:100%">
+   		
+        <div class="row-lg-4 container">
+        		
+					<div class="col-md-12">
+						<div class="card">
+				<div class="card-header">
+				<h2>Biding History <small>Shows Previous Biding Details </small></h2>
+				</div>
+				
+				<div class="card-body table-responsive">
+				<table class="table" width="100%" height="100%">
+				<thead>
+				<tr>
+				<th>User Id</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Gender</th>
+				<th>Country</th>
+				<th>State</th>
+				<th>District</th>
+				<th>Sub District</th>
+				<th>Village</th>
+				<th>Address</th>
+				<th>Pincode</th>
+				<th>Aadhar No</th>
+				<th>Mobile No</th>
+				<th>Status</th>
+				
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat = "request in requestList1">
+				<td>{{request.id}}</td>
+				<td>{{request.name}}</td>
+				<td>{{request.age}}</td>
+				<td>{{request.gender}}</td>
+				<td>{{request.country}}</td>
+				<td>{{request.state}}</td>
+				<td>{{request.district}}</td>
+				<td>{{request.subdistrict}}</td>
+				<td>{{request.village}}</td>
+				<td>{{request.address}}</td>
+				<td>{{request.pincode}}</td>
+				<td>{{request.aano}}</td>
+				<td>{{request.mno}}</td>
+				<td>{{request.status}}</td>
+				
+				</tr>
+				
+				</tbody>
+				</table>
+				</div>
+				
+				
+				</div>
+				
+				
+				</div>
+				
+     	</section>
+	</section>
+</data>

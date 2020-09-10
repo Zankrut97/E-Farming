@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+  <script type="text/javascript" src="drop sc.js"></script>
+   <script src="resources/js/cropRegistration1.js"></script>
+   
+  <style>
+    body
+       {
+		  background: url('resources/img/vege.jpg');
+		  font-family: 'Bitter', serif;
+		  height: 1830px;
+		  background-repeat: no-repeat;
+		  background-position: center;
+		  background-size: cover;
+	  }
+	  
+	  .btnRed
+      {
+      	color: white;
+      	background: #ff4d4d;
+      	padding:7px;
+      	font-size: 20px;
+      	border-radius: 5px;
+      	border: 1px solid #990000;
+      	margin-left: 40%;
+      	width: 100px;
+      }
+      .btnRed:hover
+      {
+      	background: #e60000;
+      }
+      .btnGreen
+      {
+      	color: white;
+      	background: #00e64d;
+      	padding: 7px;
+      	font-size: 20px;
+      	border-radius: 5px;
+      	border: 1px solid #336600;
+      	margin-left: 40%;
+      	width: 100px;
+      }
+      .btnGreen:hover
+      {
+      	background:green;
+      }
+       .imgPos{
+          margin-left: 30%;
+      }
+      #myModal1{
+        font-family: 'Bitter', serif;
+        background-color: lightcyan;
+      }
+      
+  </style>
+</head>
+<body>
+
+		<div class=" col-lg-10 col-lg-offset-1" style="background-color:white; position: relative; top:20px; height:1800px; opacity: 0.8; border: 2px solid; border-radius: 2rem;">
+				
+		</div>
+
+	
+		<div class=" col-lg-10 col-lg-offset-1 materialDesign_farmerFormPanel__ihzar" style="position: absolute; top:20px;">
+			<form data-ng-submit = "vendorRegistration($event)">
+ 
+		<h2 align="center" style="color: black"><font size="6">Register for New Vendor User</font></h2>
+		<img src="resources/img/efarminglogo.png" style="height:130px; width:150px; margin-left: 43%;" />
+		<div>
+			<div>
+				<div>
+					<div class="materialDesign_farmerFormFields__4CF48">
+						<div class="col-lg-12">
+						<h1 style="color: green">Vendor Details</h1>
+					</div>
+					<div class="col-lg-6">
+						<div>
+						<label class="control-label">Full Name<span>*</span></label>
+						<input type="text" value="" placeholder="Enter Vendor Name" class="form-control" data-ng-model = "vreginfo.fName">
+					</div>
+				</div>
+						
+						
+						<div class="col-lg-6">
+							<div class="materialDesign_materialInputDesign__1SROG form-group">
+							<label class="control-label">Mobile No.<span>*</span></label>
+							<input type="text" placeholder="Enter Mobile Number" value="" class="form-control" data-ng-model = "vreginfo.mNum">
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="materialDesign_materialInputDesign__1SROG form-group">
+							<label class="control-label">Age<span>*</span></label>
+							<input type="Number" placeholder="Enter Age" value="" class="form-control" data-ng-model = "vreginfo.age">
+						</div>
+					</div>
+					
+					<div class="col-lg-3">
+						<div class="materialDesign_materialInputDesign__1SROG form-group">
+							<label class="control-label">Gender<span>*</span></label>
+							<select class="form-control" data-ng-model = "vreginfo.gender">
+								<option value="" disabled=""> Select Gender</option>
+								<option value="Male"> Male </option>
+								<option value="Female"> Female </option>
+								<option value="Other"> Others </option>
+							</select>
+						</div>
+					</div>
+					
+					
+				</div>
+
+				<div class="materialDesign_farmerFormFields__4CF48"><div class="col-lg-12">
+					<h1 style="color: green">Company Details</h1>
+				</div>
+				<div class="col-lg-6">
+					<div class="materialDesign_materialInputDesign__1SROG form-group">
+						<label class="control-label">Company Name<span>*</span></label>
+						<input type="text" placeholder="Enter Company Names" value="" class="form-control" data-ng-model = "vreginfo.cName">
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="materialDesign_materialInputDesign__1SROG form-group">
+						<label class="control-label">Company Reg<span>*</span></label>
+						<input type="text" placeholder="Enter Company Register No" value="" class="form-control" data-ng-model = "vreginfo.cReg">
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<div class="materialDesign_materialInputDesign__1SROG form-group">
+						<label class="control-label">Company Add<span>*</span></label>
+						<input type="text" placeholder="Enter Company Address" value="" class="form-control" data-ng-model = "vreginfo.cAdd">
+					</div>
+				</div>
+				<div class="materialDesign_farmerFormFields__4CF48"><div class="col-lg-12">
+					<h1 style="color: green">Residential Details</h1>
+				</div>
+				
+				<div class="col-lg-6">
+					<div class="materialDesign_materialInputDesign__1SROG form-group">
+						<label class="control-label">Country<span>*</span></label>
+						<select class="form-control" id="countySel" data-ng-model = "vreginfo.country">
+							<option>Select Country</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="materialDesign_materialInputDesign__1SROG form-group">
+						<label class="control-label">State<span>*</span></label>
+						<select class="form-control" id="stateSel" data-ng-model = "vreginfo.state">
+							<option value="">Select State</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-lg-6">
+							<div class="materialDesign_materialInputDesign__1SROG form-group">
+								<label class="control-label">District<span>*</span></label>
+								<select  class="form-control" id="districtSel" data-ng-model = "vreginfo.district">
+									<option value="">Select District</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="materialDesign_materialInputDesign__1SROG form-group">
+								<label class="control-label">Sub-District<span>*</span></label>
+								<input type="text" placeholder="Enter Sub-District" value="" class="form-control" data-ng-model = "vreginfo.sDistrict">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="materialDesign_materialInputDesign__1SROG form-group">
+								<label class="control-label">Residential Village/Town<span>*</span></label>
+								<input type="text" placeholder="Enter Residential Village/Town" value="" class="form-control" data-ng-model = "vreginfo.village">
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="materialDesign_materialInputDesign__1SROG form-group">
+								<label class="control-label">Address<span>*</span></label>
+								<input type="text" value="" placeholder="Enter Address" class="form-control" data-ng-model = "vreginfo.add">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="materialDesign_materialInputDesign__1SROG form-group">
+								<label class="control-label">Pin Code<span>*</span></label>
+								<input type="text" value="" placeholder="Enter Pin Code" class="form-control" data-ng-model = "vreginfo.pin">
+							</div>
+						</div>
+					</div>
+					<div class="materialDesign_farmerFormFields__4CF48">
+						<div class="col-lg-12">
+							<h1 style="color: green">Vendor ID</h1>
+						</div>
+						<div class="col-lg-6">
+							<div class="materialDesign_materialInputDesign__1SROG form-group">
+								<label class="control-label">Id No<span>*</span></label>
+								<input type="text" value=""  placeholder="Enter ID Number" class="form-control" data-ng-model = "vreginfo.idNo">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="materialDesign_materialInputDesign__1SROG form-group">
+								<label class="control-label">Aadhar Card No<span>*</span></label>
+								<input type="text" value=""  placeholder="Enter Aadhar Number" class="form-control" data-ng-model = "vreginfo.aaNo">
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="materialDesign_farmerFormFields__4CF48">
+			<div class="col-lg-12">
+				<h1 style="color: green">Account Details</h1>
+			</div>
+			<div class="col-lg-6">
+				<div class="materialDesign_materialInputDesign__1SROG form-group">
+					<label class="control-label">IFSC<span>*</span></label>
+					<input type="text" value=""  placeholder="Enter IFSC" class="form-control" data-ng-model = "vreginfo.ifsc">
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="materialDesign_materialInputDesign__1SROG form-group">
+					<label class="control-label">Country<span>*</span></label>
+						<select class="form-control" id="countySel1" data-ng-model = "vreginfo.country1">
+							<option>Select Country</option>
+						</select>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="materialDesign_materialInputDesign__1SROG form-group">
+					<label class="control-label">State<span>*</span></label>
+					<select class="form-control" id="stateSel1" data-ng-model = "vreginfo.state1">
+						<option value="">Select State</option>	
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="materialDesign_materialInputDesign__1SROG form-group">
+					<label class="control-label">District<span>*</span></label>
+					<select  class="form-control" id="districtSel1" data-ng-model = "vreginfo.district1">
+						<option value="">Select District</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="materialDesign_materialInputDesign__1SROG form-group">
+					<label class="control-label">Bank Name<span>*</span></label>
+					<input type="text" value=""  placeholder="Enter Bank Name" class="form-control" data-ng-model = "vreginfo.bName">
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="materialDesign_materialInputDesign__1SROG form-group">
+					<label class="control-label">Bank Branch Name<span>*</span></label>
+					<input type="text" value=""  placeholder="Enter Bank Branch Name" class="form-control" data-ng-model = "vreginfo.bbName">
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="materialDesign_materialInputDesign__1SROG form-group">
+					<label class="control-label">Savings Bank A/C No.<span>*</span></label>
+					<input type="text" value="" placeholder="Enter Bank A/C" class="form-control" data-ng-model = "vreginfo.acNo">
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="materialDesign_materialInputDesign__1SROG form-group">
+					<label class="control-label">Confirm Savings Bank A/C No.<span>*</span></label>
+					<input type="text" value="" placeholder="Confirm Bank A/C" class="form-control" data-ng-model = "vreginfo.cacNo">
+				</div>
+			</div>
+			
+		</div>
+		<div class="materialDesign_farmerFormFields__4CF48">
+			<div class="col-lg-12">
+				<h1 style="color: green">Login Credentials</h1>
+			</div>
+			<div class="col-lg-6">
+				<div class="materialDesign_materialInputDesign__1SROG form-group">
+					<label class="control-label">Password<span>*</span></label>
+					<input type="password" value=""  placeholder="Enter password" class="form-control" data-ng-model = "vreginfo.pass">
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="materialDesign_materialInputDesign__1SROG form-group">
+					<label class="control-label">Confirm Password<span>*</span></label>
+					<input type="text" value=""  placeholder="Enter Password Again" class="form-control" data-ng-model = "vreginfo.cpass">
+				</div>
+			</div>
+		</div>
+		<div class="materialDesign_farmerFormFields__4CF48">
+				<div class="col-lg-6">
+					<div class="materialDesign_materialInputDesign__1SROG form-group">
+						<input type="submit" name="" value="SUBMIT" class="btnGreen" data-toggle="modal" data-target="#myModal">
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="materialDesign_materialInputDesign__1SROG form-group">
+						<input type="reset" name="" value="RESET&nbsp;" class="btnRed" >
+					</div>
+				</div>
+			
+		</div>
+	</form>
+	<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+     
+      <div class="modal-content" id="myModal1">
+        <div class="modal-body">
+            <img class="imgPos" src="resources/img/success.gif"/>
+          <h2 align="center">You Have Successfully Registerd.</h2>
+        </div>
+        <div class="modal-footer">
+         <a data-ui-sref-active="active" ui-sref="login"><button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Login Now</button></a>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</body>
+</html>

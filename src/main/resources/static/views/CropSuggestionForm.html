@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <title>E-Farming</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <style>
+           
+            .content
+            {
+                height: max-content;
+                padding: 15px;
+            }
+           
+            body
+            {
+                font-family: 'Thasadith', sans-serif;
+                background: #E0EAFC;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to left, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to left, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                
+                background-image: url('resources/img/vege.jpg');
+                background-repeat: no-repeat;
+ 				background-size: 100%;
+ 			
+            }
+            #lable2{
+            	
+            	font-size : 20px;
+            	margin-top: 10px;
+            	font-weight:bold;
+            	
+            }
+            #inputBox{
+            	
+            	height : 50px; 
+            	width : 100%;
+            	font-size : 20px;
+            	border-top : 0px;
+            	border-left : 0px;
+            	border-right : 0px;
+            	border-bottom : 1px solid skyblue;
+            	font-weight:bold;
+            
+            }
+            .card{
+            	
+            	border-radius : 20px;
+            	height : 450px;
+            
+            }
+            #myModal{
+            	background: transparent;
+            	
+            
+            }
+           
+                    
+                }  
+            
+        </style>
+          
+    </head>
+
+    <body>    
+            <header id="header" data-ng-include="'views/FarmerHeader.html'">
+            </header>
+        
+        <div class="row-lg-4">
+         <section id="content" style="margin-top: 170px;">
+         
+         	<div class="card col-lg-9">
+         	
+         		<h1 align="center" style="font-family: 'Arvo', serif; "> Crop Registration Form </h1> 
+         		<div class="col-lg-4">
+         			<img src="resources/img/cropRegistration.png" height="100%" width="100%"/>
+         		</div>
+         		<div class="col-lg-8">
+         		
+         			<div align="center" class="col-lg-12" style="margin-top:20px;">
+         				<div class="col-lg-4" id="lable2">
+         					<lable style="margin-left:30px;"> Crop Weight : </lable>
+         				</div>
+         				<div class="col-lg-8">
+         					<input type="number" name="weight" placeholder="Enter weight in tones" id="inputBox" data-ng-model="crop.weight" required/> 
+         				</div>	
+         			</div>
+         			<div align="center" class="col-lg-12" style="margin-top:10px;">
+         				<div class="col-lg-4" id="lable2">
+         					<lable style="margin-left:30px;"> Crop Year : </lable>
+         				</div>
+         				<div class="col-lg-8">
+         					<input type="number" name="weight" placeholder="Enter Current Year" id="inputBox"  data-ng-model = "crop.currentYear" required/> 
+         				</div>	
+         			</div>
+         			<div align="center" class="col-lg-12" style="margin-top:10px;">
+         				<div class="col-lg-4" id="lable2">
+         					<lable style="margin-left:30px;"> Soil Type : </lable>
+         				</div>
+         				<div class="col-lg-8">
+         					<select id="inputBox" ng-options="soil.name for soil in arrlist" ng-change="getdetails()" data-ng-model="crop.soilType" required>
+         						<option value="">Select Soil Type</option>
+							    
+							  </select>
+         					
+         				</div>	
+         			</div>
+         			<div align="center" class="col-lg-12" style="margin-top:10px;">
+         				<div class="col-lg-4" id="lable2">
+         					<lable style="margin-left:30px;"> Crop Name : </lable>
+         				</div>
+         				<div class="col-lg-8">
+         					<select id="inputBox" data-ng-model="crop.name" required>
+         						<option value="">Select Crop Name</option>
+         						<option ng-repeat="crop1 in product" value="{{crop1.productName}}">{{crop1.productName}}</option>
+							    
+							  </select>
+         					
+         				</div>	
+         			</div>
+         			<div align="center" class="col-lg-10" style="margin-top:30px; margin-left:65px;">
+         				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="width:100%;">SUBMIT</button>
+         			</div>
+         			
+         		
+         		</div>
+         	</div>
+				
+        </section> 
+        
+         <!-- The Modal -->
+		  <div class="modal" id="myModal">
+		      <div class="modal-dialog">
+		        <div class="modal-content">
+		        
+		          <!-- Modal Header -->
+		          <div class="modal-header">
+		            <h1 class="modal-title">Suggestion for {{crop.soilType.name}}: </h1>
+		          </div>
+		          
+		          <!-- Modal body -->
+		         <form id="cropSuggestion" data-ng-submit = "cropSuggestionForm($event)">
+		          <div class="modal-body">
+		          	<table class="table table-striped" style="border:2px solid skyblue;">
+					    <thead>
+					      <tr>
+					        <th style="font-weight:bold; font-size:15px;">Crop Name</th>
+					        <th style="font-weight:bold; font-size:15px;">Demand In Million tonne</th>
+					        <th style="font-weight:bold; font-size:15px;">Register</th>
+					        <th style="font-weight:bold; font-size:15px;">Select</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr ng-repeat="crop2 in product">
+					        <td align="center" style="font-weight:bold; font-size:12px;">{{crop2.productName}}</td>
+					        <td align="center" style="font-weight:bold; font-size:12px;">{{crop2.demand}}</td>
+					        <td align="center" style="font-weight:bold; font-size:12px;">{{crop2.register}}</td>
+					        <td align="center" style="font-weight:bold; font-size:12px;">
+					        	<input type="radio" value="{{crop2.productName}}" ng-click="getFinalProductName(crop2.productName)"/>
+					        </td>
+					      </tr>
+					    </tbody>
+					  </table>
+						
+		          </div>
+		          
+		           <!-- Modal footer -->
+		          <div class="modal-footer">
+		            <button type="submit" class="btn btn-success">Submit</button>
+		            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+		          </div>
+		          </form>
+		      </div>
+		    </div>
+    
+  </div>
+			 
+    </body>
+</html>

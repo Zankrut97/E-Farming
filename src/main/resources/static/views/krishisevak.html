@@ -1,0 +1,74 @@
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            .header1
+                {
+                    background: -moz-linear-gradient(48deg, #008000 0%, #008000 22%, #803100 49%, #800000 50%, #000000 100%); /* ff3.6+ */
+                    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #008000), color-stop(22%, #008000), color-stop(49%, #803100), color-stop(50%, #800000), color-stop(100%, #000000)); /* safari4+,chrome */
+                    background: -webkit-linear-gradient(48deg, #008000 0%, #008000 22%, #803100 49%, #800000 50%, #000000 100%); /* safari5.1+,chrome10+ */
+                    background: -o-linear-gradient(48deg, #008000 0%, #008000 22%, #803100 49%, #800000 50%, #000000 100%); /* opera 11.10+ */
+                    background: -ms-linear-gradient(48deg, #008000 0%, #008000 22%, #803100 49%, #800000 50%, #000000 100%); /* ie10+ */
+                    background: linear-gradient(42deg, #008000 0%, #008000 22%, #803100 49%, #800000 50%, #000000 100%); /* w3c */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#008000',GradientType=0 ); /* ie6-9 */
+                    color:white;
+                    height: auto;
+                    width:400px;
+                    padding: 5px;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                }
+                .chatbox
+                {
+                    height: max-content;
+                    border: green 0px solid;
+                    position: absolute;
+                    bottom: 0;
+                    right: 20px;
+                    width:400px;
+                    z-index: 1;
+                    
+                }  
+               
+        </style>
+        <script>
+                $(document).ready(function()
+                {
+                  $("#chatArea").hide();  
+                  $("#chatTitle").click(function()
+                  {
+                    $("#chatArea").slideToggle();
+                  });
+                });
+        </script> 
+
+</head>
+<body>
+    
+        <div class="row chatbox">
+            <div class="row-lg-4" id="chatTitle" onclick="toggle();">
+                    <div class="header1 col-lg-12" style="border:1px solid;">
+                            &nbsp;<img src="https://img.icons8.com/cotton/64/000000/sms-1.png" height="20px" width="20px">
+                            &nbsp;&nbsp;   <b><i>krishi Sevak</i></b>
+                            
+                        </div>
+            </div>
+            <div class="row-lg-8" id="chatArea" style="height: 500px;">
+                    <iframe
+                        allow="microphone;"
+                        width="400px"
+                        height="100%"
+                        src="https://console.dialogflow.com/api-client/demo/embedded/984b27fa-fa18-46d8-9227-d77504d2c439">
+                    </iframe>  
+            </div>
+        </div>
+   
+</body>
+</html>

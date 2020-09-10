@@ -1,0 +1,198 @@
+
+<head>
+		
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      
+<style>
+			.card-footer {
+				padding: 0px 0px 20px 20px;
+			}
+
+			.description_block {
+				height: 150px;
+			}
+
+			.description_text {
+				font-size:13px;
+			}
+			 #myModal{
+             font-family:  'Bitter', serif;
+             
+           }
+
+           .txtBox{
+             border-bottom: green 2px solid;
+             border-top: 0px;
+             border-left: 0px;
+             border-right: 0px;
+             width: 100%;
+            
+             padding: 2px;
+             margin-left: 0%;
+             font-weight: bold;
+             background: white;
+           }
+
+           .label1
+            {
+                font-weight: bolder;
+                color: #009933;
+                text-align: left;
+                font-size: 15px;
+                margin-left: 0px;
+            }
+			 body
+            {
+                font-family: 'Thasadith', sans-serif;
+               	font-size :12px;
+               	font-weight : bold;
+                background: #E0EAFC;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to left, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to left, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                
+                background-image: url('resources/img/vege.jpg');
+                background-repeat: no-repeat;
+ 				background-size: 100%;
+            
+            }
+            .dropdown
+            {
+                width: 100%;
+                border-bottom: green 2px solid;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+                padding: 2px;
+                margin-left: 0%;
+                font-weight: bold;
+            }
+
+</style>
+
+</head>
+<body>
+<data ui-view>
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl">
+  <link rel="stylesheet" type="text/css" id="theme" href="..\resources\css1\theme-default.css"/>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        
+</header>
+
+   <section id="main">
+   		<aside id="sidebar" data-ng-include="'views/adminmenu.html'"></aside>
+   		<section id="content" style="width:100%">
+   		
+        <div class="row-lg-4  card">
+        		
+					
+						
+				<div class="card-header">
+				<h2>Faremrs Request List <small>Shows Farmers Request </small></h2>
+				</div>
+				
+				
+				<table class="table" width="100%" height="100%">
+				<thead>
+				<tr>
+				<th style="text-align:center;">User Id</th>
+				<th style="text-align:center;">Name</th>
+				<th style="text-align:center;">Age</th>
+				<th style="text-align:center;">Gender</th>
+				<th style="text-align:center;">Country</th>
+				<th style="text-align:center;">State</th>
+				<th style="text-align:center;">District</th>
+				<th style="text-align:center;">Sub District</th>
+				<th style="text-align:center;">Village</th>
+				<th style="text-align:center;">Address</th>
+				<th style="text-align:center;">Pincode</th>
+				<th style="text-align:center;">Aadhar No</th>
+				<th style="text-align:center;">Mobile No</th>
+				<th style="text-align:center;">VF7 No. </th>
+				<th style="text-align:center;">Status</th>
+				<th style="text-align:center;"> Edit </th>
+				
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat = "request in requestList1">
+				<td style="text-align:center;">{{request.user.id}}</td>
+				<td style="text-align:center;">{{request.user.name}}</td>
+				<td style="text-align:center;">{{request.user.age}}</td>
+				<td style="text-align:center;">{{request.user.gender}}</td>
+				<td style="text-align:center;">{{request.user.country}}</td>
+				<td style="text-align:center;">{{request.user.state}}</td>
+				<td style="text-align:center;">{{request.user.district}}</td>
+				<td style="text-align:center;">{{request.user.subdistrict}}</td>
+				<td style="text-align:center;">{{request.user.village}}</td>
+				<td style="text-align:center;">{{request.user.address}}</td>
+				<td style="text-align:center;">{{request.user.pincode}}</td>
+				<td style="text-align:center;">{{request.user.aano}}</td>
+				<td style="text-align:center;">{{request.user.mno}}</td>
+				<td style="text-align:center;">{{request.vfno}}</td>
+				<td style="text-align:center;">
+					{{request.user.status}}
+				</td>
+				<td>
+					<div class="btn-demo">
+						<a  class="btn btn-md btn-primary" style="color:white;" ng-click = "updateStatus($index)" data-toggle="modal" data-target="#modalDefault">Edit</a>
+					</div>										
+				</td>
+				
+				</tr>
+				
+				</tbody>
+				</table>
+				
+				</div>
+				
+     	</section>
+	</section>
+	
+		
+</data>
+
+<div class="modal fade" id="modalDefault" tabindex="-1" role="dialog" aria-hidden="false">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Farmers Request List</h4>
+					</div>
+					<form id="editStatus" data-ng-submit = "changeCurrentStatus()">	
+					<div class="modal-body">
+						<h4>Status</h4>
+						<div class="form-group">
+						
+						<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<div class="fg-line">
+									<div class="select">
+										<select class="form-control" id="status_value">
+											<option value="false" selected>False</option>
+											<option value="true">True</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>	
+					</div>
+					<div class="modal-footer">	
+						<button type="submit" class="btn btn-link">Save changes</button>
+						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+</body>

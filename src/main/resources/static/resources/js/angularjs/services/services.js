@@ -1,0 +1,5 @@
+/**
+ * 
+ */
+var services = angular.module('tst.services', ['util-service','allBid-service','bidHistory-service','CropRegistration-service','UpdateFarmerStatus-service','CropSuggestionForm-service','CropSuggestion-service','vendorDetailsForBid-service','vendorRequestList-service','UpdateBid-service','farmerRequestList-service','liveBid-service','viewBid-service','login-service','vendor-register-service','employee-home-service','farmer-register-service','pretest-started-service','admin-pretest-employee-list-service','admin-pretest-employee-details-service','registration-service','admin-add-speaking-questions-service','admin-edit-pretest-speaking-service','admin-assign-pretest-service','admin-add-employee-service','admin-edit-pretest-service','admin-speaking-modal-service','admin-show-employee-service','admin-update-employee-modal-service','admin-delete-employee-service','admin-reset-employee-service','check-valid-employee-pretest-service']);
+	

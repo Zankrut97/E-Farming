@@ -1,0 +1,18 @@
+<div class="sidebar-inner c-overflow">    
+
+    <ul class="main-menu">
+        
+        <li data-ui-sref-active="active">
+            <a ui-sref="adminhome"><i class="zmdi zmdi-home"></i> HOME</a>
+        </li>
+        <li data-ng-class="{ 'active toggled': mactrl.$state.includes('authenticate') }"  class="sub-menu">
+            <a href="" toggle-submenu><i class="zmdi zmdi-view-compact"></i> Pending Request </a>
+           		<ul>
+                    <li><a ui-sref="authenticate.farmer">Farmer Request</a></li>
+					<li><a ui-sref="authenticate.vendor">Vendor Request</a></li>
+					   
+               	</ul>
+        </li>
+       
+    </ul>
+</div>

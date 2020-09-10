@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <title>E-Farming</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+       
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <style>
+           
+            .content
+            {
+                margin-top: 200px;
+               
+                margin-left: 20px;
+                margin-right: 20px;
+                height: 100%;
+            }
+           
+            body
+            {
+                font-family: 'Thasadith', sans-serif;
+                background: #E0EAFC;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to left, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to left, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                
+                background-image: url('resources/img/vege.jpg');
+                background-repeat: no-repeat;
+ 				      background-size: 100%;
+            
+            }
+            table
+            {
+                font-family: 'Thasadith', sans-serif;
+                text-align: center;
+            }
+           #myModal{
+             font-family:  'Bitter', serif;
+           }
+
+           .txtBox{
+             border-bottom: green 2px solid;
+             border-top: 0px;
+             border-left: 0px;
+             border-right: 0px;
+             width: 100%;
+            
+             padding: 2px;
+             margin-left: 0%;
+             font-weight: bold;
+             background: white;
+           }
+
+           .label1
+            {
+                font-weight: bolder;
+                color: #009933;
+                text-align: left;
+                font-size: 15px;
+                margin-left: 0px;
+            }
+
+           
+        </style>
+    </head>
+
+    <body>   
+    
+    
+            <header id="header" data-ng-include="'views/VendorHeader.html'">
+            </header>     
+        <div class="content container">
+
+                <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th  style="text-align:center;">FarmerName</th>
+                            <th  style="text-align:center;">CropName</th>
+                            <th  style="text-align:center;">CropType</th>
+                            <th  style="text-align:center;">StartDate</th>
+                            <th  style="text-align:center;">EndDate</th>
+                            <th  style="text-align:center;">State</th>
+                            <th  style="text-align:center;">District</th>
+                            <th  style="text-align:center;">BasePrice(100KG)</th>
+                            <th  style="text-align:center;">Weight(KG)</th>
+                            <th  style="text-align:center;">CurrentPrice</th>
+                            <th  style="text-align:center;">Description</th>
+                            <th  style="text-align:center;">Bid</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat = "bid in bidList">
+                                <td>{{bid.user.name}}</td>
+                                <td>{{bid.cropName}}</td>
+                                <td>{{bid.cropType}}</td>
+                                <td>{{bid.startDate}}</td>
+                                <td>{{bid.endDate}}</td>
+                                <td>{{bid.selectState}}</td>
+                                <td>{{bid.selectDistrict}}</td>
+                                <td>{{bid.basePrice}}</td>
+                                <td>{{bid.weight}}</td>
+                                <td>{{bid.currentPrice}}</td>
+                                <td>{{bid.description}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary ng-scope waves-effect" data-toggle="modal" data-target="#myModal" ng-click="openModel($index)">
+                                        <i class="zmdi zmdi-edit"></i>
+                                      </button>      
+                                 </td>
+
+                          </tr>
+                        </tbody>
+                      </table>
+                       <!-- The Modal -->
+  <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h1 class="modal-title">Place Bid</h1>
+            <button type="button" class="close" data-dismiss="modal">×</button>
+          </div>
+          
+          <!-- Modal body -->
+          <form id="editPrice" data-ng-submit = "changeCurrentPrice()">
+          <div class="modal-body">
+
+                <br><br>
+               
+                <div class="row">
+                    <div class="col-lg-12">
+                          <p class="label1">Current Price</p> 
+                          <input type="number" class="txtBox col-lg-12" ng-value="editCurrentPrice.currentPrice" data-ng-model = "data1.currentPrice1"/>
+                    </div>
+                </div><br>
+              
+           </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success" >Place Bid</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+                       
+          </div>
+
+       
+    </body>
+</html>
